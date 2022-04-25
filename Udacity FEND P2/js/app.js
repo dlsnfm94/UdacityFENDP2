@@ -38,7 +38,8 @@ for (let i = 0; i < 5; i++) {
     const navItemLink = document.querySelectorAll('.menu__link')[i];
     const section = document.getElementById('section'+(i+1));
     
-    navItemLink.addEventListener('click', function() {
+    navItemLink.addEventListener('click', function(event) {
+        event.preventDefault();
         section.scrollIntoView({behavior:"smooth"});
     })
 }
