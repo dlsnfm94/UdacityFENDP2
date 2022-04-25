@@ -1,6 +1,4 @@
-html {
-    scroll-behavior: smooth;
-}
+
 
 /* ---- Base Rules ---- */
 body {
@@ -201,6 +199,11 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+.menu_link_active {
+    background-color: '#333';
+    color: '#fff';
 }
 
 /* Section Active Styles Keyframe Animations */

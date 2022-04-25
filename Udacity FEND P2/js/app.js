@@ -1,8 +1,12 @@
 // build the nav
+const sections = Array.from(document.getElementsByTagName('section'));
 const navBar = document.getElementById("navbar__list");
-for (let i = 1; i <= 5; i++) {
+for (section of sections) {
     const navItem = document.createElement('li');
-    navItem.innerHTML = "<a class=\"menu__link\" href=\"#section"+i+"\">Section "+i+" </a>";
+    const navItemLink = document.createElement('a');
+    navItemLink.textContent = section.dataset.nav;
+    navItemLink.classList.add('menu__link');
+    navItem.appendChild(navItemLink);
     navBar.appendChild(navItem);
 }
 
@@ -20,24 +24,22 @@ for (let i = 1; i <= 5; i++) {
     document.addEventListener('scroll', function() {
         if (isNearViewportTop(sectionN)) {
             sectionN.classList.add('your-active-class');
-            navItem.style.backgroundColor = '#333';
-            navItem.style.color = '#fff';
+            navItem.classList.add('menu_link_active');
         }
         else {
             sectionN.classList.remove('your-active-class');
-            navItem.style.backgroundColor = '#fff';
-            navItem.style.color = '#333';
+            navItem.classList.remove('menu_link_active');
         }
     })
 }
 
 // Scroll to section
 for (let i = 0; i < 5; i++) {
-    const navItem = document.querySelectorAll('.menu__link')[i];
+    const navItemLink = document.querySelectorAll('.menu__link')[i];
     const section = document.getElementById('section'+(i+1));
     
-    navItem.addEventListener('click', function() {
-        scrollTo(section);
+    navItemLink.addEventListener('click', function() {
+        section.scrollIntoView({behavior:"smooth"});
     })
 }
 
