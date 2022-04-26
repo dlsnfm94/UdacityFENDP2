@@ -202,8 +202,8 @@ section.your-active-class .landing__container::after {
 }
 
 .menu_link_active {
-    background-color: '#333';
-    color: '#fff';
+    background-color: #333;
+    color: #fff;
 }
 
 /* Section Active Styles Keyframe Animations */
