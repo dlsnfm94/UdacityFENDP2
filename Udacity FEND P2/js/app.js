@@ -20,14 +20,14 @@ function isNearViewportTop(element) {
 
 for (let i = 1; i <= 5; i++) {
     const sectionN = document.getElementById('section'+i);
-    const navItem = document.querySelectorAll('.menu__link')[i-1];
+    const navItem = document.getElementsByClassName('menu__link')[i-1];
     document.addEventListener('scroll', function() {
         if (isNearViewportTop(sectionN)) {
-            sectionN.classList.add('your-active-class');
+            sectionN.classList.add('landing__container_active');
             navItem.classList.add('menu_link_active');
         }
         else {
-            sectionN.classList.remove('your-active-class');
+            sectionN.classList.remove('landing__container_active');
             navItem.classList.remove('menu_link_active');
         }
     })
@@ -35,7 +35,7 @@ for (let i = 1; i <= 5; i++) {
 
 // Scroll to section
 for (let i = 0; i < 5; i++) {
-    const navItemLink = document.querySelectorAll('.menu__link')[i];
+    const navItemLink = document.getElementsByClassName('menu__link')[i];
     const section = document.getElementById('section'+(i+1));
     
     navItemLink.addEventListener('click', function(event) {
